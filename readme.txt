@@ -3,11 +3,21 @@ also see "Common sw win10 openai pybullet tensorflow keras matlab deep l learnin
 
 the python script test_inception_keras.py works on tensorflow gpu 1.14 +
 keras 2.3.1, or tensorflow cpu + keras 2.3.1
+and also might be strick on cudann version, this is satisfied in the docker image:
+   docker run --gpus all -it -v "${PWD}:/app" jwang3vsu/tensorflow:tf1.14-keras bash
 
 tf 1.12 or lower not work
 source ~/bin/usepython3.sh 
 /media/student/tf-gpu-src mounted
+
 python3 test_inception_keras.py 
+	require keras
+
+python3 test_tensorflowgpu.py 
+
+-------6/22/2020 test run -----------------
+newpcamd, ub18, rtx 2080, docker img
+docker run --gpus all -it -v "${PWD}:/app" jwang3vsu/tensorflow:tf1.14-keras bash
 
 -------12/31/2019 work with rtx 2080 ----------
 the test_inception_keras.py not work with rtx 2080 machine,
